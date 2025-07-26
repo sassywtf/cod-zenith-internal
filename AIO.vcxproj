@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{64d2efb6-6851-440b-bb6c-762bf3ac1ec9}</ProjectGuid>
+    <RootNamespace>AIO</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>t10 workspace</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(LocalDebuggerWorkingDirectory)includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LocalDebuggerWorkingDirectory)includes\minhook;$(ReferencePath);$(LibraryPath)</LibraryPath>
+    <TargetName>dummy</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\dll\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;AIO_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;AIO_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;AIO_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;AIO_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="address.h" />
+    <ClInclude Include="config\config.h" />
+    <ClInclude Include="gui\Color_t.hpp" />
+    <ClInclude Include="gui\imgui\imconfig.h" />
+    <ClInclude Include="gui\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="hooks\minhook\include\MinHook.h" />
+    <ClInclude Include="hooks\minhook\MinHook.h" />
+    <ClInclude Include="hooks\minhook\src\buffer.h" />
+    <ClInclude Include="hooks\minhook\src\hde\hde32.h" />
+    <ClInclude Include="hooks\minhook\src\hde\hde64.h" />
+    <ClInclude Include="hooks\minhook\src\hde\pstdint.h" />
+    <ClInclude Include="hooks\minhook\src\hde\table32.h" />
+    <ClInclude Include="hooks\minhook\src\hde\table64.h" />
+    <ClInclude Include="hooks\minhook\src\trampoline.h" />
+    <ClInclude Include="cheat\blueprint\blueprints.h" />
+    <ClInclude Include="protect\vmp.h" />
+    <ClInclude Include="shadow\sys.h" />
+    <ClInclude Include="spoofer\callstack.h" />
+    <ClInclude Include="util\defs.h" />
+    <ClInclude Include="gui\font.h" />
+    <ClInclude Include="gui\framework.h" />
+    <ClInclude Include="cheat\game.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="protect\hash.h" />
+    <ClInclude Include="gui\imgui_draw_api.h" />
+    <ClInclude Include="gui\imgui\imgui.h" />
+    <ClInclude Include="gui\imgui\imgui_impl_dx12.h" />
+    <ClInclude Include="gui\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="gui\imgui\imgui_internal.h" />
+    <ClInclude Include="gui\imgui\ImGui_ShaderBlobs.h" />
+    <ClInclude Include="gui\imgui\imstb_rectpack.h" />
+    <ClInclude Include="gui\imgui\imstb_textedit.h" />
+    <ClInclude Include="gui\imgui\imstb_truetype.h" />
+    <ClInclude Include="util\lazyimporter.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="protect\mem_protect.h" />
+    <ClInclude Include="menu\menu.h" />
+    <ClInclude Include="sdks\sdk.h" />
+    <ClInclude Include="spoofer\spoof.h" />
+    <ClInclude Include="util\nlohmann\adl_serializer.hpp" />
+    <ClInclude Include="util\nlohmann\byte_container_with_subtype.hpp" />
+    <ClInclude Include="util\nlohmann\detail\abi_macros.hpp" />
+    <ClInclude Include="util\nlohmann\detail\conversions\from_json.hpp" />
+    <ClInclude Include="util\nlohmann\detail\conversions\to_chars.hpp" />
+    <ClInclude Include="util\nlohmann\detail\conversions\to_json.hpp" />
+    <ClInclude Include="util\nlohmann\detail\exceptions.hpp" />
+    <ClInclude Include="util\nlohmann\detail\hash.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\binary_reader.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\input_adapters.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\json_sax.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\lexer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\parser.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\position_t.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\internal_iterator.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\iteration_proxy.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\iterator_traits.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\iter_impl.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\json_reverse_iterator.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\primitive_iterator.hpp" />
+    <ClInclude Include="util\nlohmann\detail\json_custom_base_class.hpp" />
+    <ClInclude Include="util\nlohmann\detail\json_pointer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\json_ref.hpp" />
+    <ClInclude Include="util\nlohmann\detail\macro_scope.hpp" />
+    <ClInclude Include="util\nlohmann\detail\macro_unscope.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\call_std\begin.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\call_std\end.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\cpp_future.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\detected.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\identity_tag.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\is_sax.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\std_fs.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\type_traits.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\void_t.hpp" />
+    <ClInclude Include="util\nlohmann\detail\output\binary_writer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\output\output_adapters.hpp" />
+    <ClInclude Include="util\nlohmann\detail\output\serializer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\string_concat.hpp" />
+    <ClInclude Include="util\nlohmann\detail\string_escape.hpp" />
+    <ClInclude Include="util\nlohmann\detail\value_t.hpp" />
+    <ClInclude Include="util\nlohmann\json.hpp" />
+    <ClInclude Include="util\nlohmann\json_fwd.hpp" />
+    <ClInclude Include="util\nlohmann\ordered_map.hpp" />
+    <ClInclude Include="util\nlohmann\thirdparty\hedley\hedley.hpp" />
+    <ClInclude Include="util\nlohmann\thirdparty\hedley\hedley_undef.hpp" />
+    <ClInclude Include="util\utility.h" />
+    <ClInclude Include="sdks\vec.h" />
+    <ClInclude Include="sdks\vec2.h" />
+    <ClInclude Include="protect\xorstr.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cheat\blueprint\blueprints.cpp" />
+    <ClCompile Include="config\config.cpp" />
+    <ClCompile Include="cheat\game.cpp">
+      <DeploymentContent>false</DeploymentContent>
+    </ClCompile>
+    <ClCompile Include="gui\imgui\imgui.cpp" />
+    <ClCompile Include="gui\imgui\imgui_demo.cpp" />
+    <ClCompile Include="gui\imgui\imgui_draw.cpp" />
+    <ClCompile Include="gui\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="gui\imgui\imgui_impl_dx12.cpp" />
+    <ClCompile Include="gui\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="gui\imgui\ImGui_ShaderBlobs.cpp" />
+    <ClCompile Include="gui\imgui\imgui_tables.cpp" />
+    <ClCompile Include="gui\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="hooks\minhook\src\buffer.c" />
+    <ClCompile Include="hooks\minhook\src\hde\hde32.c" />
+    <ClCompile Include="hooks\minhook\src\hde\hde64.c" />
+    <ClCompile Include="hooks\minhook\src\hook.c" />
+    <ClCompile Include="hooks\minhook\src\trampoline.c" />
+    <ClCompile Include="hook_handler.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu\menu.cpp" />
+    <ClCompile Include="sdks\sdk.cpp" />
+    <ClCompile Include="util\utility.cpp" />
+    <ClCompile Include="sdks\vec2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="spoofer\spoofer.asm">
+      <MakeAllSymbolsPublic Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </MakeAllSymbolsPublic>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\..\VMProtect_Ultimate_v3.6.0_x32_Build_1406 (1)\VMProtect_Ultimate_v3.6.0_x32_Build_1406\Lib\Windows\VMProtectSDK64.lib" />
+    <Library Include="hooks\minhook\minhook.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hooks\minhook\dll_resources\MinHook.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hooks\minhook\dll_resources\MinHook.aps" />
+    <None Include="hooks\minhook\dll_resources\MinHook.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+    <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets'))" />
+  </Target>
+</Project>

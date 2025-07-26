@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{2ddcfa2b-d6be-431c-bb7a-a824fcb8877d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helper">
+      <UniqueIdentifier>{64cbf5cc-98fe-44c0-8b5f-1276bbf2d9ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="keiro">
+      <UniqueIdentifier>{60814ea4-e7c0-4da6-8bb4-caf57f34fac8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{5b61788e-8007-4373-81e7-d61b0cc7d8bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk">
+      <UniqueIdentifier>{de1da972-25d4-4730-8c78-9a8cf920a03d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="font">
+      <UniqueIdentifier>{e5ef0812-fb64-4361-831a-060bfca5a2f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utilities">
+      <UniqueIdentifier>{207f6639-740e-4612-9658-20de7ee74507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\vectors">
+      <UniqueIdentifier>{ce855f62-23e1-462e-bb2c-0b26c4c93de1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Notify">
+      <UniqueIdentifier>{29aa8f02-1600-42be-83e8-1227dd3d9116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Notify\menu">
+      <UniqueIdentifier>{a9823cd8-c3fc-4759-8db0-c6a6f5a325de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shadow">
+      <UniqueIdentifier>{1e1c0eac-14d3-475d-93ca-88f0156b4334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mem">
+      <UniqueIdentifier>{7b8c9e3a-5d23-49f8-8892-855b57cadcf4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gui\imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\imgui\imgui_impl_dx12.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\imgui\ImGui_ShaderBlobs.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\framework.h">
+      <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="cheat\game.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="sdks\sdk.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="protect\xorstr.hpp">
+      <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="util\lazyimporter.h">
+      <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="util\defs.h">
+      <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="gui\imgui_draw_api.h">
+      <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="util\utility.h">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="sdks\vec.h">
+      <Filter>sdk\vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="sdks\vec2.h">
+      <Filter>sdk\vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\font.h" />
+    <ClInclude Include="spoofer\spoof.h">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="address.h">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="protect\mem_protect.h">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\menu.h">
+      <Filter>Notify\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="cheat\blueprint\blueprints.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="protect\hash.h">
+      <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\Color_t.hpp" />
+    <ClInclude Include="config\config.h" />
+    <ClInclude Include="hooks\minhook\MinHook.h" />
+    <ClInclude Include="hooks\minhook\src\buffer.h" />
+    <ClInclude Include="hooks\minhook\src\trampoline.h" />
+    <ClInclude Include="hooks\minhook\src\hde\table64.h" />
+    <ClInclude Include="hooks\minhook\src\hde\pstdint.h" />
+    <ClInclude Include="hooks\minhook\src\hde\table32.h" />
+    <ClInclude Include="hooks\minhook\src\hde\hde64.h" />
+    <ClInclude Include="hooks\minhook\src\hde\hde32.h" />
+    <ClInclude Include="hooks\minhook\include\MinHook.h" />
+    <ClInclude Include="gui\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="gui\imgui\imconfig.h" />
+    <ClInclude Include="shadow\sys.h" />
+    <ClInclude Include="spoofer\callstack.h" />
+    <ClInclude Include="protect\vmp.h" />
+    <ClInclude Include="util\nlohmann\detail\conversions\from_json.hpp" />
+    <ClInclude Include="util\nlohmann\detail\conversions\to_chars.hpp" />
+    <ClInclude Include="util\nlohmann\detail\conversions\to_json.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\binary_reader.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\input_adapters.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\json_sax.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\lexer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\parser.hpp" />
+    <ClInclude Include="util\nlohmann\detail\input\position_t.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\internal_iterator.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\iter_impl.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\iteration_proxy.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\iterator_traits.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\json_reverse_iterator.hpp" />
+    <ClInclude Include="util\nlohmann\detail\iterators\primitive_iterator.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\call_std\begin.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\call_std\end.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\cpp_future.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\detected.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\identity_tag.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\is_sax.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\std_fs.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\type_traits.hpp" />
+    <ClInclude Include="util\nlohmann\detail\meta\void_t.hpp" />
+    <ClInclude Include="util\nlohmann\detail\output\binary_writer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\output\output_adapters.hpp" />
+    <ClInclude Include="util\nlohmann\detail\output\serializer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\abi_macros.hpp" />
+    <ClInclude Include="util\nlohmann\detail\exceptions.hpp" />
+    <ClInclude Include="util\nlohmann\detail\hash.hpp" />
+    <ClInclude Include="util\nlohmann\detail\json_custom_base_class.hpp" />
+    <ClInclude Include="util\nlohmann\detail\json_pointer.hpp" />
+    <ClInclude Include="util\nlohmann\detail\json_ref.hpp" />
+    <ClInclude Include="util\nlohmann\detail\macro_scope.hpp" />
+    <ClInclude Include="util\nlohmann\detail\macro_unscope.hpp" />
+    <ClInclude Include="util\nlohmann\detail\string_concat.hpp" />
+    <ClInclude Include="util\nlohmann\detail\string_escape.hpp" />
+    <ClInclude Include="util\nlohmann\detail\value_t.hpp" />
+    <ClInclude Include="util\nlohmann\thirdparty\hedley\hedley.hpp" />
+    <ClInclude Include="util\nlohmann\thirdparty\hedley\hedley_undef.hpp" />
+    <ClInclude Include="util\nlohmann\adl_serializer.hpp" />
+    <ClInclude Include="util\nlohmann\byte_container_with_subtype.hpp" />
+    <ClInclude Include="util\nlohmann\json.hpp" />
+    <ClInclude Include="util\nlohmann\json_fwd.hpp" />
+    <ClInclude Include="util\nlohmann\ordered_map.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gui\imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\imgui\imgui_impl_dx12.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\imgui\ImGui_ShaderBlobs.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="cheat\game.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="sdks\sdk.cpp">
+      <Filter>sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\menu.cpp">
+      <Filter>Notify\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="util\utility.cpp">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="sdks\vec2.cpp">
+      <Filter>sdk\vectors</Filter>
+    </ClCompile>
+    <ClCompile Include="cheat\blueprint\blueprints.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="config\config.cpp">
+      <Filter>helper</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\imgui\imgui_tables.cpp" />
+    <ClCompile Include="hooks\minhook\src\hook.c" />
+    <ClCompile Include="hooks\minhook\src\trampoline.c" />
+    <ClCompile Include="hooks\minhook\src\buffer.c" />
+    <ClCompile Include="hooks\minhook\src\hde\hde64.c" />
+    <ClCompile Include="hooks\minhook\src\hde\hde32.c" />
+    <ClCompile Include="hook_handler.cpp" />
+    <ClCompile Include="gui\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="gui\imgui\imgui_demo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="spoofer\spoofer.asm">
+      <Filter>utilities</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="hooks\minhook\minhook.lib" />
+    <Library Include="..\..\..\..\VMProtect_Ultimate_v3.6.0_x32_Build_1406 (1)\VMProtect_Ultimate_v3.6.0_x32_Build_1406\Lib\Windows\VMProtectSDK64.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hooks\minhook\dll_resources\MinHook.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hooks\minhook\dll_resources\MinHook.def" />
+    <None Include="hooks\minhook\dll_resources\MinHook.aps" />
+  </ItemGroup>
+</Project>
